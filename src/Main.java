@@ -129,7 +129,7 @@ class CarShowroom {
             return;
         }
 
-        Car car = carsToUpdate.get(0); // Update the first found car
+        Car car = carsToUpdate.get(0);
         System.out.print("Enter new max passengers: ");
         int newMaxPassengers = scanner.nextInt();
         System.out.print("Enter new cost: ");
@@ -184,7 +184,7 @@ public class Main {
 
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
