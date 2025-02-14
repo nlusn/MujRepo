@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-// PurchaseRequest class moved above Car to fix compilation error
 class PurchaseRequest {
     private String buyerName;
     private String phoneNumber;
