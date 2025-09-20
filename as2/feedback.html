@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's Grades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="head">Feedbacks</h1>
+    </header>
+
+    <nav>
+        <a href="mainpage.html">Main Page</a>
+        <a href="FamousPerson.html">The Great Man</a>
+        <a href="grades.html">The Grades</a>
+        <a href="feedback.html">Feedbacks</a>
+    </nav>
+
+    <div class="content">
+        <h2 id="divHeading">Feedback survey</h2>
+
+        <form class="formContainer" action="">
+            <label for="name">Name</label>
+            <input type="text" class="inputField" id="name" placeholder="Jacob">
+            
+            <label for="email">Email</label>
+            <input type="text" class="inputField" id="email" placeholder="username@mailname.com">
+
+            <label for="role">Choose your role</label>
+            <select name="role" id="role" class="inputField">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label>Are you satisfied with your life:</label>
+            <div>
+                <label for="yesAnswer">
+                    Yes
+                    <input type="radio" id="yesAnswer" name="life" value="yes">    
+                </label>
+                <label for="noAnswer">
+                    No 
+                    <input type="radio" id="noAnswer" name="life" value="no">
+                </label>
+            </div>
+
+            <label for="feedback">Feedback</label>
+            <textarea id="feedback" name="feedback" rows="4" class="inputField" placeholder="Write your comments here"></textarea>
+
+            <input type="submit" value="Submit the result" class="submitBtn">
+        </form>
+    </div>
+
+    <footer>
+        <p>2025 N Basketball Association | All rights reserved</p>
+    </footer>
+</body>
+</html>
