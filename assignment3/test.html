@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid Layout Task</title>
+  <style>
+
+    .container {
+      display: grid;
+      grid-template-rows: 100px 1fr 100px;
+      grid-template-columns: 200px 1fr;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      height: 100vh;
+    }
+
+    header {
+      grid-area: header;
+      background: skyblue;
+    }
+
+    aside {
+      grid-area: sidebar;
+      background: lightgray;
+    }
+
+    main {
+      grid-area: main;
+      background: white;
+    }
+
+    footer {
+      grid-area: footer;
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>Header</header>
+    <aside>Sidebar</aside>
+    <main>Main content</main>
+    <footer>Footer</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+header {
+    background-color: blanchedalmond;
+}
+
+.image {
+    display:flex;
+    height:200px;
+    width:200px;
+    justify-content: left;
+}
+
+.link-list ul {
+    display:flex;
+    justify-content:space-between;
+    font-size:3em;
+    list-style: none;
+
+
+}
