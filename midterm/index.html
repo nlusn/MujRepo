@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrightWeb Studio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin-top: 70px;
+        scroll-behavior: smooth;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: url("https://via.placeholder.com/1200x600") center/cover
+          no-repeat;
+        height: 100vh;
+        position: relative;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Portfolio Grid */
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+      .portfolio-grid img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s;
+      }
+      .portfolio-grid img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Footer */
+      footer {
+        background: #111;
+        color: #ddd;
+        text-align: center;
+        padding: 20px;
+      }
+
+      /* Responsive Media Queries */
+      @media (max-width: 992px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+      }
+      @media (max-width: 576px) {
+        .hero {
+          height: 60vh;
+        }
+        .navbar-brand {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#home">BrightWeb</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navmenu"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="display-4 fw-bold">Welcome to BrightWeb Studio</h1>
+        <p class="lead">We craft beautiful, responsive, and fast websites.</p>
+        <a href="#services" class="btn btn-primary btn-lg mt-3">Our Services</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container py-5">
+      <h1 class="text-center mb-4">About Us</h1>
+      <p class="text-center mb-4">
+        BrightWeb Studio is a creative team passionate about web development and
+        design.
+      </p>
+      <h2 class="mt-5">Our Team</h2>
+      <table class="table table-bordered table-striped mt-3">
+        <thead class="table-dark">
+          <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Experience (Years)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ali Khan</td>
+            <td>Frontend Developer</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Maria Petrova</td>
+            <td>UI/UX Designer</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>James Smith</td>
+            <td>Backend Engineer</td>
+            <td>6</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="container py-5 bg-light">
+      <h1 class="text-center mb-5">Our Services</h1>
+      <div class="row text-center g-4">
+        <div class="col-md-4 d-flex flex-column align-items-center">
+          <div class="p-4 border rounded">
+            <h3>Web Design</h3>
+            <p>Clean, modern, and user-focused web design.</p>
+          </div>
+        </div>
+        <div class="col-md-4 d-flex flex-column align-items-center">
+          <div class="p-4 border rounded">
+            <h3>Development</h3>
+            <p>Custom websites and web apps using latest technologies.</p>
+          </div>
+        </div>
+        <div class="col-md-4 d-flex flex-column align-items-center">
+          <div class="p-4 border rounded">
+            <h3>Maintenance</h3>
+            <p>Ongoing support and updates to keep your site secure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="container py-5">
+      <h1 class="text-center mb-5">Our Portfolio</h1>
+      <div class="portfolio-grid">
+        <img src="https://via.placeholder.com/300x200" alt="Project 1" />
+        <img src="https://via.placeholder.com/300x200" alt="Project 2" />
+        <img src="https://via.placeholder.com/300x200" alt="Project 3" />
+        <img src="https://via.placeholder.com/300x200" alt="Project 4" />
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container py-5 bg-light">
+      <h1 class="text-center mb-4">Contact Us</h1>
+      <form class="mx-auto" style="max-width: 600px">
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" id="name" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea id="message" rows="4" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">
+          Send Message
+        </button>
+      </form>
+    </section>
+
+    <footer>&copy; 2025 BrightWeb Studio | All rights reserved</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
