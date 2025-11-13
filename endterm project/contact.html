@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1355/1355036.png">
+
+    <style>
+        #navigation {
+            background-color: bisque;
+        }
+
+        .nav-link {
+            color: black !important;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: brown;
+            color: orange !important;
+            border-radius: 20px;
+        }
+
+        .contact-box {
+            background-color: #fff6e6;
+            border: 2px solid #d4a373;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .contact-box:hover {
+            transform: scale(1.03);
+            background-color: #ffeccc;
+        }
+
+        footer {
+            background-color: bisque;
+            padding: 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .contact-form {
+            padding: 20px;
+            border: 2px solid #d4a373;
+            border-radius: 12px;
+            background-color: #fff6e6;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .contact-form input, .contact-form textarea {
+            margin-bottom: 15px;
+        }
+
+        .error {
+            border-color: red;
+        }
+
+        .success-message {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        #messageDisplay {
+            background-color: #fff6e6;
+            border-radius: 12px;
+            padding: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        #messagesContainer div {
+            border-bottom: 1px solid #d4a373;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg p-4" id="navigation">
+        <div class="container-fluid">
+            <a class="navbar-brand text-dark fw-bold" href="index.html">My Website</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="mainMenu">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container my-5 d-flex justify-content-between gap-3">
+    <!-- Left: Contact Form -->
+    <div class="contact-form flex-fill">
+        <h3 class="mb-3">Send me a message</h3>
+        <form id="contactForm" novalidate>
+            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+            <input type="tel" id="phone" class="form-control" placeholder="Your Phone Number" pattern="[0-9+ ]{7,15}">
+            <textarea id="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn btn-warning mt-2">Submit</button>
+        </form>
+        <p class="success-message">Thank you! Your message has been sent.</p>
+    </div>
+
+    <!-- Right: Display Submitted Messages -->
+    <div id="messageDisplay" class="flex-fill">
+        <h4>Submitted Messages</h4>
+        <div id="messagesContainer"></div>
+    </div>
+</div>
+
+<footer class="text-center p-4">
+  <p>© 2025 My Website</p>
+  <p>
+    Email: <a href="mailto:info@mywebsite.com" class="text-dark">info@mywebsite.com</a> |
+    Phone: <a href="tel:+1234567890" class="text-dark">+1 234 567 890</a> |
+    Instagram: <a href="https://www.instagram.com/mywebsite" target="_blank" class="text-dark">@mywebsite</a>
+  </p>
+</footer>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    // Load saved form data from localStorage (draft)
+    if (localStorage.getItem("contactFormData")) {
+        const savedData = JSON.parse(localStorage.getItem("contactFormData"));
+        $("#name").val(savedData.name || "");
+        $("#email").val(savedData.email || "");
+        $("#phone").val(savedData.phone || "");
+        $("#message").val(savedData.message || "");
+    }
+
+    // Load all submitted messages from localStorage
+    function loadMessages() {
+        const messages = JSON.parse(localStorage.getItem("submittedMessages") || "[]");
+        $("#messagesContainer").empty();
+        messages.forEach(msg => {
+            const newMessage = `
+                <div>
+                    <strong>${msg.name}</strong> (<em>${msg.email}</em>)<br>
+                    <p>${msg.message}</p>
+                </div>
+            `;
+            $("#messagesContainer").append(newMessage);
+        });
+    }
+
+    loadMessages(); // load on page load
+
+    // Save form data to localStorage on input change 
+    $(".form-control").on("input", function() {
+        const formData = {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            phone: $("#phone").val(),
+            message: $("#message").val()
+        };
+        localStorage.setItem("contactFormData", JSON.stringify(formData));
+    });
+
+    // Form Validation and Submission
+    $("#contactForm").on("submit", function(e) {
+        e.preventDefault();
+
+        let valid = true;
+        $(".form-control").removeClass("error");
+
+        if ($("#name").val().trim() === "") {
+            $("#name").addClass("error");
+            valid = false;
+        }
+
+        const email = $("#email").val().trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            $("#email").addClass("error");
+            valid = false;
+        }
+
+        const phone = $("#phone").val().trim();
+        const phonePattern = /^[0-9+ ]{7,15}$/;
+        if (phone !== "" && !phonePattern.test(phone)) {
+            $("#phone").addClass("error");
+            valid = false;
+        }
+
+        if ($("#message").val().trim() === "") {
+            $("#message").addClass("error");
+            valid = false;
+        }
+
+        if (valid) {
+            // Show success message briefly
+            $(".success-message").fadeIn().delay(2000).fadeOut();
+
+            // Save message in localStorage
+            const messages = JSON.parse(localStorage.getItem("submittedMessages") || "[]");
+            messages.push({
+                name: $("#name").val(),
+                email: $("#email").val(),
+                phone: $("#phone").val(),
+                message: $("#message").val()
+            });
+            localStorage.setItem("submittedMessages", JSON.stringify(messages));
+
+            // Append message to the panel
+            loadMessages();
+
+            // Clear form and draft data
+            $("#contactForm")[0].reset();
+            localStorage.removeItem("contactFormData");
+        }
+    });
+});
+</script>
+
+</body>
+</html>

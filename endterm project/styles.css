@@ -1,0 +1,14 @@
+#navigation {
+    background-color: bisque;
+}
+
+li {
+    color: white;
+}
+
+li:hover {
+    background-color:brown;
+    color:orange !important;
+    border-radius: 20px;
+    
+}

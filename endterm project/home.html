@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog - Home</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1355/1355036.png">
+
+    <style>
+        #navigation {
+            background-color: bisque;
+        }
+
+        .nav-link {
+            color: black !important;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: brown;
+            color: orange !important;
+            border-radius: 20px;
+        }
+
+
+        .hero {
+            position: relative;
+            color: #8B5E3C;
+            scroll-padding: 50px;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            border: 3px solid;
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 8px;
+        }
+
+
+        .hero p {
+            font-size: 1.5rem;
+        }
+
+        .post-card {
+            transition: 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: scale(1.03);
+            transition: 0.3s;
+        }
+
+        footer {
+            background: bisque;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .carousel-item img {
+            height:350px;
+            object-fit:cover;
+        }
+
+        .card-img-top {
+            height:300px;
+            object-fit: cover;
+        }
+
+        .fade-card {
+            opacity:0;
+            transition: opacity 0.09s ease-in-out;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <nav class="navbar navbar-expand-lg p-4" id="navigation">
+        <div class="container-fluid">
+
+            <a class="navbar-brand text-dark fw-bold" href="home.html"><i class="bi bi-luggage"></i> My Journey</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="mainMenu">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1 style="border-width: thin solid blue;">Welcome to My Blog</h1>
+    <p>Sharing stories, creativity and inspiration.</p>
+</section>
+
+<!-- CAROUSEL -->
+<div id="promoCarousel" class="carousel container my-5" >
+
+    <!-- Slides -->
+    <div class="carousel-inner rounded shadow">
+        <div class="carousel-item active">
+            <img  src="https://images.pexels.com/photos/51947/tuscany-grape-field-nature-51947.jpeg" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/159862/art-school-of-athens-raphael-italian-painter-fresco-159862.jpeg" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/1243538/pexels-photo-1243538.jpeg" class="d-block w-100" alt="">
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+
+</div>
+
+<!-- BLOG POST PREVIEW -->
+<div class="container my-5">
+    <h2 class="mb-4 text-center">Latest Posts</h2>
+
+    <div class="row g-4">
+
+    <div class="col-md-4 fade-card">
+        <div class="card post-card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Hidden Beaches to Explore</h5>
+                <p class="card-text">Discover breathtaking secret coastlines around the world.</p>
+                <a href="post-beaches.html" class="btn btn-outline-dark">Read More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 fade-card">
+        <div class="card post-card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1502920514313-52581002a659" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Top Budget Travel Tips</h5>
+                <p class="card-text">Travel more while spending less — smart planning tricks.</p>
+                <a href="post-budget.html" class="btn btn-outline-dark">Read More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 fade-card">
+        <div class="card post-card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Backpacking Across Europe</h5>
+                <p class="card-text">An unforgettable journey through cities, mountains, and old towns.</p>
+                <a href="post-backpacking.html" class="btn btn-outline-dark">Read More</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<footer class="text-center p-4">
+  <p>© 2025 My Website</p>
+  <p>
+    Email: <a href="mailto:info@mywebsite.com" class="text-dark">info@mywebsite.com</a> |
+    Phone: <a href="tel:+1234567890" class="text-dark">+1 234 567 890</a> |
+    Instagram: <a href="https://www.instagram.com/mywebsite" target="_blank" class="text-dark">@mywebsite</a>
+  </p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Fade-in Animation -->
+<script>
+    $(window).on("scroll", function () {
+        $(".fade-card").each(function () {
+            let position = $(this).offset().top;
+            let screenTop = $(window).scrollTop() + $(window).height();
+            if (position < screenTop) {
+                $(this).animate({ opacity: 1 }, 500);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

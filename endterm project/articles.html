@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1355/1355036.png">
+
+  <style>
+    #navigation {
+      background-color: bisque;
+    }
+
+    .nav-link {
+      color: black !important;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: brown;
+      color: orange !important;
+      border-radius: 20px;
+    }
+
+    .article-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #fff;
+      transition: transform .3s;
+    }
+
+    .article-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .article-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .read-more {
+      color: brown;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.5s ease;
+    }
+
+    .read-more:hover {
+      background-color: brown;
+      color:#ddd;
+      border-radius: 20px;
+      padding:10px;
+      transition: 0.5s;
+    }
+
+    footer {
+      background-color: bisque
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg p-4" id="navigation">
+    <div class="container-fluid">
+      <a class="navbar-brand text-dark fw-bold" href="home.html">My Website</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="mainMenu">
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="articles.html">Articles</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container mt-5">
+
+  <h2 class="text-center mb-4">Articles</h2>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs justify-content-center" id="articleTabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="tab" href="#travel">Travel</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#lifestyle">Lifestyle</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#thoughts">Thoughts</a>
+    </li>
+  </ul>
+
+  <div class="tab-content mt-4 mb-5">
+
+    <!-- Travel -->
+    <div class="tab-pane fade show active" id="travel">
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="">
+            <div class="p-3">
+              <h4>How Traveling Changes Perspective</h4>
+              <p>Every journey teaches something new about ourselves.</p>
+              <a href="traveling.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef" alt="">
+            <div class="p-3">
+              <h4>Hidden Beaches to Explore</h4>
+              <p>Discover breathtaking secret coastlines around the world.</p>
+              <a href="post-beaches.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1502920514313-52581002a659" alt="">
+            <div class="p-3">
+              <h4>Top Budget Travel Tips</h4>
+              <p>Travel more while spending less — smart planning tricks.</p>
+              <a href="post-budget.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
+            <div class="p-3">
+              <h4>Backpacking Across Europe</h4>
+              <p>An unforgettable journey through cities, mountains, and old towns.</p>
+              <a href="post-backpacking.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff" alt="">
+            <div class="p-3">
+              <h4>Solo Adventures: Finding Peace on the Road</h4>
+              <p>Traveling alone builds confidence and unforgettable memories.</p>
+              <a href="solo-travel.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="">
+            <div class="p-3">
+              <h4>Mountain Escapes: Where Nature Heals</h4>
+              <p>Explore the serenity of mountains and the calm they bring.</p>
+              <a href="mountains.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Lifestyle -->
+    <div class="tab-pane fade" id="lifestyle">
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="">
+            <div class="p-3">
+              <h4>Creating Meaningful Daily Rituals</h4>
+              <p>Small routines shape the way we feel and move through life.</p>
+              <a href="daily.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="">
+            <div class="p-3">
+              <h4>The Art of Mindful Living</h4>
+              <p>Being present transforms everyday moments into peace.</p>
+              <a href="mindful.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde" alt="">
+            <div class="p-3">
+              <h4>Minimalism at Home</h4>
+              <p>Declutter your space to declutter your mind and spirit.</p>
+              <a href="minimalism.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1532634896-26909d0d4b2b" alt="">
+            <div class="p-3">
+              <h4>Balancing Work and Rest</h4>
+              <p>Learn to recharge without feeling guilty for slowing down.</p>
+              <a href="balance.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Thoughts -->
+    <div class="tab-pane fade" id="thoughts">
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1527181152855-fc03fc7949c8" alt="">
+            <div class="p-3">
+              <h4>Learning to Trust Time</h4>
+              <p>Good things grow slowly — and that's okay.</p>
+              <a href="Time.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1505672678657-cc7037095e4d" alt="">
+            <div class="p-3">
+              <h4>When Plans Don’t Work Out</h4>
+              <p>Sometimes detours take us exactly where we need to be.</p>
+              <a href="plans.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30" alt="">
+            <div class="p-3">
+              <h4>Quiet Confidence</h4>
+              <p>Power doesn’t always speak loudly — it’s often calm and steady.</p>
+              <a href="confidence.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1536250774161-12d4fa2b7d64" alt="">
+            <div class="p-3">
+              <h4>Letting Go of Perfection</h4>
+              <p>Embracing imperfection leads to true creativity and peace.</p>
+              <a href="imperfection.html" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="text-center p-4">
+  <p>© 2025 My Website</p>
+  <p>
+    Email: <a href="mailto:info@mywebsite.com" class="text-dark">info@mywebsite.com</a> |
+    Phone: <a href="tel:+1234567890" class="text-dark">+1 234 567 890</a> |
+    Instagram: <a href="https://www.instagram.com/mywebsite" target="_blank" class="text-dark">@mywebsite</a>
+  </p>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
